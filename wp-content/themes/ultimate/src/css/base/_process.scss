@@ -1,0 +1,94 @@
+///////////////////////
+// Doc Styles
+///////////////////////
+
+$tablet: 767px;
+$desktop: 991px;
+
+///////////////////////
+// Tab Styles
+///////////////////////
+.tab-controls {
+  //border-bottom: 3px solid #8C1811;
+  display: none;
+  margin: 0;
+  padding: 0;
+  @media screen and (min-width: $desktop) {
+    @apply flex justify-center space-x-2;
+  }
+  .tab-item {
+    display: inline-block;
+    width: auto;
+  }
+}
+.tab-section {
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  .tab-item {
+    .tab-title {
+      @media screen and (min-width: $desktop) {
+        display: none;
+      }
+    }
+  }
+}
+.tab-item {
+  display: block;
+  width: 100%;
+  .tab-title {
+    background: #F3F4F6;
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    transition: 0.4s ease;
+    margin-bottom:10px;
+    width: 100%;
+    &:hover, &.is-active {
+      background: #8C1811;
+      color: #fff;
+    }
+    @media screen and (min-width: $desktop) {
+      width: auto;
+    }
+  }
+  .tab-content {
+    box-sizing: border-box;
+    display: none;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    padding: 2rem;
+    position: relative;
+    transition: 0.4s ease;
+    visibility: hidden;
+    width: 100%;
+    &.is-active {
+      display: block;
+      height: auto;
+      opacity: 1;
+      padding: 2rem;
+      visibility: visible;
+    }
+
+    h2,h3 {
+      @apply text-2xl;
+      @screen lg {
+        @apply text-3xl;
+      }
+    }
+
+    ul {
+      padding-inline-start: 30px;
+      @apply list-disc list-outside mb-6;
+
+      @screen lg {
+        padding-inline-start: 40px;
+      }
+    }
+  } 
+}

@@ -1,0 +1,36 @@
+2023-05-05 16:55:31 Eskimo Successful response: 
+2023-05-05 16:55:31 Eskimo API Response:  Time Taken: 0.23421001434326 seconds
+2023-05-05 16:56:23 Eskimo Successful response: 
+2023-05-05 16:56:23 Eskimo API Response:  Time Taken: 0.13101887702942 seconds
+2023-05-05 16:58:10 Eskimo Successful response: 
+2023-05-05 16:58:10 Eskimo API Response:  Time Taken: 0.13187789916992 seconds
+2023-05-05 16:59:21 Eskimo Successful response: 
+2023-05-05 16:59:21 Eskimo API Response:  Time Taken: 0.13324499130249 seconds
+2023-05-05 17:06:12 Successful response:  HTTP CODE 404
+2023-05-05 17:06:12 Response:  Time Taken: 0.24130582809448 seconds
+2023-05-05 17:10:29 Successful response:  HTTP CODE 201
+2023-05-05 17:10:29 Response:  Time Taken: 0.27859711647034 seconds
+2023-05-05 17:43:40 Successful response:  HTTP CODE 404
+2023-05-05 17:43:40 Response:  Time Taken: 0.1733341217041 seconds
+2023-05-05 17:47:31 Successful response:  HTTP CODE 201
+2023-05-05 17:47:31 Response:  Time Taken: 0.29131293296814 seconds
+2023-05-05 17:50:27 Response:  HTTP CODE 422
+2023-05-05 17:50:27 Response:  Time Taken: 0.27207016944885 seconds
+2023-05-05 17:51:21 Response:  HTTP CODE 201
+2023-05-05 17:51:21 Response:  Time Taken: 0.25353598594666 seconds
+2023-05-05 17:54:26 Response:  HTTP CODE 422
+2023-05-05 17:54:26 Response:  Time Taken: 0.25070095062256 seconds
+2023-05-05 17:55:11 Response:  HTTP CODE 422
+2023-05-05 17:55:11 Response:  Time Taken: 0.15526700019836 seconds
+2023-05-05 17:57:00 Response:  HTTP CODE 422
+2023-05-05 17:57:00 Response:  Time Taken: 0.19527292251587 seconds
+2023-05-05 18:02:16 Response:  HTTP CODE 404
+2023-05-05 18:02:16 Response:  Time Taken: 0.16495299339294 seconds
+2023-05-05 18:02:56 Response:  HTTP CODE 404
+2023-05-05 18:02:56 Response:  Time Taken: 0.19060206413269 seconds
+2023-05-05 18:03:33 Response:  HTTP CODE 404
+2023-05-05 18:03:33 Response:  Time Taken: 0.21637797355652 seconds
+2023-05-05 18:03:57 Response:  HTTP CODE 404
+2023-05-05 18:03:57 Response:  Time Taken: 0.17745780944824 seconds
+2023-05-05 18:04:30 Response:  HTTP CODE 404
+2023-05-05 18:04:30 Response:  Time Taken: 0.16537618637085 seconds

@@ -1,0 +1,90 @@
+const colors = require("tailwindcss/colors");
+
+module.exports = {
+  mode: "jit",
+  purge: [
+    "partials/*.php",
+    "includes/functions/*.php",
+    "page-templates/*.php",
+    "template-parts/footer/*.php",
+    "partials/flexible-layouts/*.php",
+    "partials/blog-layouts/*.php",
+    "template-parts/global/*.php",
+    "template-parts/shop/*.php",
+    "template-parts/homepage/*.php",
+    "template-parts/navigation/*.php",
+    "woocommerce/*.php",
+    "woocommerce/myaccount/*.php",
+    "app/src/compnents/*.vue",
+    "page.php",
+    "index.php",
+    "cusstom-login.php",
+    "search.php",
+    "searchform.php",
+    "archive.php",
+    "job-board.php",
+    "header.php",
+    "404.php",
+    "single.php",
+    "single-jobs.php",
+    "footer.php",
+    "woocommerce.php",
+  ],
+  darkMode: false,
+  theme: {
+    fontSize: {
+      xs: ".75rem",
+      sm: ".875rem",
+      tiny: ".875rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2rem",
+      "5xl": "2.5rem",
+      "6xl": "3.5rem",
+      "7xl": "5rem",
+      "8xl": "6rem",
+      "9xl": "7rem",
+    },
+    extend: {
+      fontFamily: {
+        moderat: ["moderat", "sans-serif"],
+        visby: ["visby", "sans-serif"],
+      },
+      colors: {
+        gold: {
+          100: "#fdf6cc",
+          200: "#fcec99",
+          300: "#fae366",
+          400: "#f9d933",
+          500: "#A4C1D7",
+          600: "#c6a600",
+          700: "#947d00",
+          800: "#635300",
+          900: "#312a00"
+        },
+        'secondary' : '#CFF800',
+        'secondary-accent' : '#ef233c',
+        'primary' : '#0075EB',
+        'primary-accent' : '#8d99ae',
+        'offwhite' : '#edf2f4',
+      },
+    },
+    deliciousHamburgers: {
+      size: "30px", // must be in px.
+      color: "#fff",
+      colorLight: "#fff8f4",
+      padding: "0px", // must be in px.
+      animationSpeed: 1,
+    },
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require("tailwindcss-delicious-hamburgers"),
+    // require("@tailwindcss/aspect-ratio"),
+  ],
+};

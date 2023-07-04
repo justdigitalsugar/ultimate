@@ -1,0 +1,286 @@
+// Contact form 7 styling
+
+.wpcf7 {
+  form {
+    div {
+      // @screen md {
+      //   @apply flex w-full;
+      // }
+
+      &.textarea-wrapper {
+        @apply w-full flex flex-col flex-wrap mb-4;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    select,
+    textarea {
+      @apply h-10 w-full px-4 transition ease-in-out border-gray-500 border-opacity-50 duration-300 border rounded text-gray-500;
+
+      &.wpcf7-not-valid {
+        @apply border-red-500 #{!important};
+        @apply bg-red-50 #{!important};
+      }
+
+      &:focus {
+        @apply outline-none border-primary bg-white;
+      }
+
+      @screen lg {
+        @apply h-12;
+      }
+    }
+
+    input[type="submit"] {
+      @apply items-center px-5 py-3 text-base cursor-pointer text-black transition-all duration-300 ease-in-out bg-secondary font-semibold font-visby rounded-lg mt-10 block mx-auto;
+
+      @screen lg {
+        @apply py-4;
+      }
+    }
+
+    input[type="checkbox"] {
+      @apply mr-2;
+
+    }
+
+    textarea {
+      @apply w-full h-40;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      @apply w-full;
+    }
+
+    fieldset {
+      @apply mb-4;
+
+      @screen md {
+        @apply w-1/2 flex-col flex-wrap;
+      }
+
+      &:first-of-type {
+        @apply mr-3;
+      }
+    }
+
+    label {
+      @apply mb-1 text-sm block mt-4;
+    }
+
+    .wpcf7-response-output {
+      @apply border-none my-2 p-3 mx-0 hidden;
+    }
+
+    &.invalid {
+      .wpcf7-response-output {
+        @apply bg-red-100 text-red-500 text-sm border-red-500 rounded-md py-3 mt-0 ml-0;
+        border-color: #ef4400 !important;
+      }
+    }
+  }
+
+  &#wpcf7-f12034-o1 {
+    input[type="submit"] {
+      @apply w-full rounded-md h-16 mt-8;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    @apply text-red-500 font-medium text-sm block mt-2;
+  }
+
+  p {
+    @apply m-0;
+  }
+}
+
+.horizontal {
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-3xl text-secondary;
+  }
+
+  p {
+    @apply text-white;
+
+    @screen lg {
+      @apply text-xl;
+    }
+  }
+
+  .space {
+
+    @apply flex-wrap flex-row;
+    div {
+      @screen lg {
+        @apply w-[22%] mr-2;
+      }
+    }
+  }
+
+  input[type="submit"] {
+    @apply items-center px-8 py-2 mr-3 text-base cursor-pointer text-black w-full transition-all duration-300 ease-in-out bg-secondary rounded-full font-bold block my-[34px] #{!important};
+    @screen lg {
+      @apply py-5 #{!important};
+    }
+  }
+
+  label {
+    @apply font-bold text-white;
+  }
+}
+
+
+.onboarding-form, .login-form {
+  form {
+    div {
+      @screen md {
+        @apply w-full;
+      }
+
+      &.textarea-wrapper {
+        @apply w-full flex flex-col flex-wrap mb-4;
+      }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="password"],
+    select,
+    textarea {
+      @apply h-10 w-full px-4 transition ease-in-out border-gray-500 border-opacity-50 duration-300 border rounded;
+
+      &.wpcf7-not-valid {
+        @apply border-red-500 #{!important};
+        @apply bg-red-50 #{!important};
+      }
+
+      &:focus {
+        @apply outline-none border-primary bg-white;
+      }
+
+      @screen lg{
+        @apply h-12;
+      }
+    }
+
+    input[type="submit"] {
+      @apply items-center px-5 py-3 text-base cursor-pointer transition-all duration-300 ease-in-out bg-secondary uppercase font-semibold font-visby rounded-full mt-10 block mx-auto;
+
+      @screen lg {
+        @apply py-4;
+      }
+    }
+
+    textarea {
+      @apply w-full h-40;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select {
+      @apply w-full;
+    }
+
+    fieldset {
+      @apply mb-4;
+
+      @screen md {
+        @apply w-1/2 flex-col flex-wrap;
+      }
+
+      &:first-of-type {
+        @apply mr-3;
+      }
+    }
+
+    label {
+      @apply mb-1 text-sm block mt-4;
+    }
+
+    .wpcf7-response-output {
+      @apply border-none my-2 p-3 mx-0;
+    }
+
+    &.invalid {
+      .wpcf7-response-output {
+        @apply bg-red-100 text-red-500 text-sm border-red-500 rounded-md py-3 mt-0 ml-0;
+        border-color: #ef4400 !important;
+      }
+    }
+  }
+
+  &#wpcf7-f12034-o1 {
+    input[type="submit"] {
+      @apply w-full rounded-md h-16 mt-8;
+    }
+  }
+
+  .wpcf7-not-valid-tip {
+    @apply text-red-500 font-medium text-sm block mt-2;
+  }
+
+  p {
+    @apply mb-4;
+  }
+}
+
+#myModal {
+  position: fixed;
+  display: flex;
+  visibility: hidden;
+  left: 0;
+  // transform: translate(-50%, -50%);
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  z-index: 9999;
+  opacity: 0;
+  top:50px;
+  transition: all 0.3s ease-in;
+  @apply justify-center items-center;
+}
+
+#myModal.show {
+  visibility: visible;
+  top: 0;
+  opacity: 1;
+  //transition: opacity 0.5s ease-in-out;
+}
+
+#contact-box {
+  right: -400px;
+  width: 400px;
+  transition: transform 0.5s ease-out;
+  @apply bg-gray-800 z-[999] fixed top-0 h-[100vh] px-12 flex items-center justify-center;
+}
+
+#contact-box.show {
+  transform: translateX(-400px);
+}
+
+.step {
+  position: relative;
+  top: 20px;
+  transition: all 0.3s ease;;
+}
+.step.fadeup {
+  top: 0;
+}

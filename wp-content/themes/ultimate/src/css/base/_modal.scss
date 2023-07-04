@@ -1,0 +1,29 @@
+#modal {
+  @apply fixed top-0 left-0 bg-black/50 z-[99999] h-full w-full;
+  transition: all 1s;
+}
+
+.modalcontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: min(90%, 600px);
+}
+
+#modallogo {
+  @apply mt-6;
+}
+
+.modalheading {
+  @apply font-normal;
+}
+
+.success {
+  @apply bg-green-200;
+}
+
+.fail {
+  @apply bg-red-200;
+}

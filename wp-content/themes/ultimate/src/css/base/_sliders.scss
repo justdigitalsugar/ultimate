@@ -1,0 +1,14 @@
+.splide {
+    .splide__pagination {
+      @apply transform-none bottom-auto relative pt-10 block;
+      li {
+        @apply pr-1;
+        .splide__pagination__page {
+          @apply w-4 h-4 transition ease-in-out duration-300;
+          &.is-active {
+            @apply bg-black transform-none;
+          }
+        }
+      }
+    }
+  }

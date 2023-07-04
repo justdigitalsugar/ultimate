@@ -1,0 +1,218 @@
+.woocommerce-checkout.woocommerce-page {
+    .woocommerce {
+
+        @screen lg {
+            @apply flex flex-wrap;
+        }
+
+        .woocommerce-notices-wrapper {
+            @apply w-full;
+        }
+
+        .woocommerce-form-coupon-toggle {
+            @apply w-full mb-8 bg-gray-50 p-2;
+        }
+
+        .woocommerce-checkout {
+            @screen md {
+                @apply flex flex-wrap;
+            }
+
+            .col2-set {
+                @apply w-full;
+
+                @screen md {
+                    @apply w-[55%];
+                }
+            }
+
+            .woocommerce-checkout-review-order {
+                @apply w-full;
+
+                @screen md {
+                    @apply w-[45%] pl-16;
+                }
+            }
+
+            .woocommerce-error {
+                @apply bg-[#C7F200] p-4 mb-8 rounded;
+
+                @screen lg {
+                    @apply p-12;
+                }
+
+                li {
+                    @apply mb-2;
+                }
+            }
+        }
+    }
+}
+
+// coupon code styling
+.checkout_coupon.woocommerce-form-coupon {
+    p:first-of-type {
+        @apply mb-4;
+    }
+
+    @apply pb-8;
+
+    input[type="text"] {
+        @apply rounded-md h-12 px-4 transition ease-in-out border-gray-800 border-opacity-100 duration-300 border mb-4 w-full;
+
+        &:focus {
+            @apply outline-none border-black bg-white;
+        }
+    }
+
+    .button {
+        @apply px-3 py-4;
+    }
+}
+
+.woocommerce-checkout-review-order {
+    .shop_table {
+        @apply bg-gray-100 w-full p-6 rounded;
+
+        th.product-name {
+            @apply text-left;
+        }
+
+        thead {
+
+            tr {
+                th {
+                    @apply px-4 py-3;
+                }
+            }
+        }
+
+        tbody {
+            @apply w-full;
+
+            tr {
+                @apply border-b;
+
+                td {
+                    @apply px-4 py-2;
+                }
+            }
+        }
+
+        tfoot {
+            tr {
+                th {
+                    @apply px-4 py-2 text-right;
+                }
+
+                td {
+                    @apply px-4 py-2 text-right;
+                }
+            }
+        }
+
+        .product-total {
+            @apply text-right;
+        }
+
+        .woocommerce-Price-amount {
+            @apply text-right;
+        }
+    }
+}
+
+.woocommerce-checkout-payment {
+    @apply p-6 bg-gray-200;
+}
+
+.woocommerce-privacy-policy-text {
+    @apply pt-5 px-0;
+}
+
+#order_review_heading {
+    @apply hidden;
+}
+
+#shipping_method {
+    li {
+        @apply flex items-center;
+
+        label {
+            @apply ml-2;
+        }
+    }
+}
+
+// select two country dropdown
+.select2 {
+    @apply p-3 border rounded-md bg-white border-black;
+    margin-bottom: 16px !important;
+
+    &.select2-container--default {
+        .select2-selection--single {
+            @apply border-none;
+
+            .select2-selection__rendered {
+                @apply text-tiny font-normal px-0;
+            }
+        }
+
+        .select2-selection--single .select2-selection__arrow {
+            @apply top-1/2 transform -translate-y-1/2;
+        }
+    }
+}
+
+.select2-container--default .select2-dropdown {
+    @apply border-gray-200 pt-2 text-black;
+    margin-top: -8px;
+
+    .select2-results__option--highlighted[aria-selected],
+    .select2-results__option--highlighted[data-selected] {
+        @apply bg-primary;
+    }
+
+    .select2-results>.select2-results__options .select2-results__option {
+        @apply text-tiny;
+    }
+
+    .select2-search__field {
+        @apply rounded-md text-tiny py-2;
+        border-color: rgb(220, 220, 220) !important;
+    }
+}
+
+.select2-dropdown {
+    @apply text-base;
+    padding-top: 0 !important;
+    width: 307.484px;
+    border: 1px solid rgb(229, 231, 235) !important;
+    border-top: none !important;
+    top: 4px;
+}
+
+.select2-container--default .select2-dropdown .select2-results>.select2-results__options .select2-results__option {
+    font-size: 1rem;
+}
+
+.select2.select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 1rem;
+}
+
+.woocommerce-shipping-fields {
+    @apply my-6;
+
+    span {
+        @apply text-xl;
+    }
+}
+
+.wc-stripe-save-source {
+    .checkbox {
+        @apply w-[initial] #{!important};
+    }
+}
+
+.woocommerce-info {
+    @apply rounded;
+}

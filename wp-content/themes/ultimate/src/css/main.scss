@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+// Base
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "base/font-face";
+@import "base/navigation";
+@import "base/sliders";
+@import "base/forms";
+@import "base/components";
+@import "base/process";
+@import "base/helpers";
+
+// cookie styling
+@import "base/cookieconsent.css";
+@import "base/modal";
+
+// Splide carousel
+
+// @import "/node_modules/@splidejs/splide/dist/css/splide.min.css";
+
+.box {
+	@apply
+		bg-gray-700
+		text-gray-100
+		min-w-full
+		h-40
+		min-h-full
+    relative
+		rounded;
+
+    @screen lg {
+      @apply h-60;
+    }
+}
+
+.sep:last-of-type {
+  @apply hidden;
+}
+
+.generic {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Global
+
+html {
+  scroll-behavior: smooth;
+  // @apply pt-20;
+
+  // @screen lg {
+  //   @apply pt-24;
+  // }
+}
+
+.max-w-7xl {
+  @apply mx-auto px-4;
+}
+
+@layer base {
+  body {
+    @apply overflow-x-hidden antialiased leading-normal text-black font-moderat bg-white text-[15px];
+
+    @screen lg {
+      @apply text-[17px];
+    }
+  }
+  h1,
+  .h1 {
+    @apply text-5xl mb-2 tracking-tight leading-tight font-bold font-visby;
+    @screen lg {
+      @apply text-6xl mb-4;
+    }
+  }
+
+  h2,
+  .h2 {
+    @apply text-2xl mb-2 tracking-tight leading-tight font-bold font-visby;
+    @screen lg {
+      @apply text-5xl mb-4 leading-none;
+    }
+  }
+
+  h3,
+  .h3 {
+    @apply text-2xl mb-2 tracking-tight leading-tight font-semibold font-visby;
+    @screen lg {
+      @apply text-4xl mb-4;
+    }
+  }
+
+  h4,
+  .h4 {
+    @apply text-xl mb-2 tracking-tight leading-normal font-semibold font-visby;
+    @screen lg {
+      @apply text-2xl;
+    }
+  }
+
+  h5,
+  .h5 {
+    @apply text-xl font-normal;
+    @screen lg {
+      @apply mb-2;
+    }
+  }
+
+  h6,
+  .h6 {
+    @apply mb-1 text-base font-normal;
+    @screen lg {
+      @apply mb-2;
+    }
+  }
+
+  p {
+    @apply mb-4;
+  }
+  a {
+    @apply transition-all ease-in-out duration-300 font-medium text-inherit;
+    &:hover {
+      @apply opacity-75;
+    }
+  }
+  .container {
+    @apply px-4;
+    @screen md {
+      @apply mx-auto;
+    }
+  }
+  .button {
+    @apply inline-block px-10 py-4 font-semibold border-2 rounded-full mt-4 font-visby;
+  }
+  .button-primary {
+    @apply  transition-all ease-in-out duration-300 bg-secondary text-black leading-none border-secondary;
+    &:hover {
+      @apply bg-transparent border-opacity-100 opacity-100 ;
+    }
+  }
+  .button-secondary {
+    @apply transition-all ease-in-out duration-300 bg-primary text-white leading-none border-primary;
+    &:hover {
+      @apply bg-transparent border-opacity-100 opacity-100 text-primary;
+    }
+  }
+  .button-gray {
+    @apply transition-all ease-in-out duration-300 bg-gray-100 text-gray-500 leading-none border-gray-100;
+    &:hover {
+      @apply bg-transparent border-opacity-100 opacity-100 text-primary;
+    }
+  }
+  .button-sm {
+    @apply inline-block px-8 py-2 font-medium border-2 transition-all ease-in-out duration-300 bg-primary text-white leading-none border-primary mt-4 text-sm uppercase font-visby;
+    &:hover {
+      @apply bg-transparent border-opacity-100 opacity-100 text-primary;
+    }
+  }
+}
+
+.section {
+  @apply mb-16;
+
+  @screen md {
+    @apply mb-16;
+  }
+
+  @screen lg {
+    @apply mb-28;
+  }
+}
+
+.stacked {
+  h2,h3,h4 {
+    @apply text-2xl;
+  }
+}
+
+.feature-item:nth-of-type(even) {
+  @apply border-l border-r;
+}
+
+@media (min-width: 1024px) {
+	.bg-after:after {
+		top: 0;
+		width: 75%;
+		height: 100%;
+		content: "";
+		position: absolute;
+		right: 0;
+		background-color: #fff;
+		z-index: 10;
+	}
+
+	.bg-after-reverse:after {
+		top: 0;
+		width: 75%;
+		height: 100%;
+		content: "";
+		position: absolute;
+		left: 0;
+		background-color: #fff;
+		z-index: 10;
+	}
+}
+
+
+
+.shadow-dreamy {
+  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
+              0 2px 2px rgba(0,0,0,0.11), 
+              0 4px 4px rgba(0,0,0,0.11), 
+              0 6px 8px rgba(0,0,0,0.11),
+              0 8px 16px rgba(0,0,0,0.11);
+}
+
+.large-hero {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+}
+
+
+// Accordion
+
+.accordion {
+  & .js-toggle {
+    &.active {
+      .chevron {
+        @apply transform rotate-90;
+      }
+    }
+  }
+  .toggle-container:not(.active) {
+    @apply hidden;
+  }
+}
+.searchoverlay {
+  position: fixed;
+  background: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s, visibility .35s, height .35s;
+  overflow: hidden;
+  z-index: 9990;
+}
+.searchoverlay.open {
+  opacity: .9;
+  visibility: visible;
+  height: 100%;
+}
+
+.block-style {
+  ul {
+    padding-inline-start: 20px;
+    @apply list-disc mb-4;
+    @screen lg {
+      padding-inline-start: 40px;
+    }
+
+    li {
+      @apply mb-1;
+    }
+  }
+  ol {
+    padding-inline-start: 20px;
+    @apply list-decimal mb-4;
+    @screen lg {
+      padding-inline-start: 40px;
+    }
+
+    li {
+      @apply mb-1;
+    }
+  }
+}
+
+.job-desc {
+  em {
+    @apply not-italic;
+  }
+  ul {
+    padding-inline-start: 30px;
+    @apply list-disc mb-4;
+    @screen lg {
+      padding-inline-start: 40px;
+    }
+
+    li {
+      @apply mb-1;
+    }
+  }
+
+  ol {
+    padding-inline-start: 30px;
+    @apply list-decimal mb-4;
+    @screen lg {
+      padding-inline-start: 40px;
+    }
+
+    li {
+      @apply mb-1;
+    }
+  }
+}
+
+.onboarding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .step {
+    width: 100%;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #007aff;
+    width: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.venn-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 35%; /* This sets the aspect ratio of the diagram (50% for a perfect circle) */
+  @screen lg {
+    padding-bottom: 20%;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 0;
+  width: 50%; /* Half the width of the container */
+  //height: 100%;
+  border-radius: 50%;
+  opacity: 60%;
+  
+}
+
+.circle-left {
+  left: 10%;
+  transform: translateX(-100%);
+  animation: circle-left 1s forwards;
+  @apply bg-primary;
+}
+
+.circle-right {
+  right: 10%;
+  transform: translateX(100%);
+  animation: circle-right 1s forwards;
+  @apply bg-secondary;
+}
+
+@keyframes circle-left {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes circle-right {
+  to {
+    transform: translateX(0%);
+  }
+}

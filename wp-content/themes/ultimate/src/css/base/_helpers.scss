@@ -1,0 +1,7 @@
+.header-clip {
+    clip-path: ellipse(125% 85% at 50% 0);
+    @screen lg {
+        clip-path: ellipse(100% 99% at 50% 0);
+    }
+}
+
