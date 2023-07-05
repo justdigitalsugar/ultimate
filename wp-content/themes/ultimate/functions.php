@@ -1,37 +1,66 @@
 <?php
+/**
+ * Register a book post type, with REST API support
+ *
+ * Based on example at: https://developer.wordpress.org/reference/functions/register_post_type
+ */
+function codex_result_init() {
+  $labels = array(
+      'name'               => _x( 'Contacts', 'post type general name', 'your-plugin-textdomain' ),
+      'singular_name'      => _x( 'Contacts', 'post type singular name', 'your-plugin-textdomain' ),
+      'menu_name'          => _x( 'Contacts', 'admin menu', 'your-plugin-textdomain' ),
+      'name_admin_bar'     => _x( 'Contacts', 'add new on admin bar', 'your-plugin-textdomain' ),
+      'add_new'            => _x( 'Add New', 'Contacts', 'your-plugin-textdomain' ),
+      'add_new_item'       => __( 'Add New Contacts', 'your-plugin-textdomain' ),
+      'new_item'           => __( 'New Contacts', 'your-plugin-textdomain' ),
+  
+      'edit_item'          => __( 'Edit Contacts', 'your-plugin-textdomain' ),
+  
+      'view_item'          => __( 'View Contacts', 'your-plugin-textdomain' ),
+  
+      'all_items'          => __( 'All Contacts', 'your-plugin-textdomain' ),
+  
+      'search_items'       => __( 'Search Contacts', 'your-plugin-textdomain' ),
+  
+      'parent_item_colon'  => __( 'Parent Contacts:', 'your-plugin-textdomain' ),
+      'not_found'          => __( 'No Contacts found.', 'your-plugin-textdomain' ),
+      'not_found_in_trash' => __( 'No Contacts found in Trash.', 'your-plugin-textdomain' )
+  );
+  
+  $args = array(
+      'labels'             => $labels,
+      'description'        => __( 'Description.', 'your-plugin-textdomain' ),
+      'public'             => true,
+      'publicly_queryable' => true,
+      'show_ui'            => true,
+      'show_in_menu'       => true,
+      'show_in_rest'       => true,
+      'query_var'          => true,
+      'menu_icon'          => 'dashicons-admin-users',
+      'rewrite' => array( 'slug' => __('contacts', 'contacts')),
+      'capability_type'    => 'post',
+      'has_archive'        => true,
+      'hierarchical'       => false,
+      'rest_base'          => 'contacts',
+      'rest_controller_class' => 'WP_REST_Posts_Controller',
+      'menu_position'      => 5,
+      'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+      'taxonomies'       => array('result','category', 'post_tag')
+  
+  );
+  
+  register_post_type( 'contacts', $args );
+  }
+    add_action( 'init', 'codex_result_init' );
 
-//Register menus
-require_once(__DIR__ . '/includes/functions/register-menus.php');
+// include custom jQuery
+function shapeSpace_include_custom_jquery() {
 
-// Register ACF options
-require_once(__DIR__ . '/includes/functions/register-acf-options.php');
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js', array(), null, true);
 
-// Add featured image theme support
-require_once(__DIR__ . '/includes/functions/add-thumbnails.php');
-
-// WooCommerce
-require_once(__DIR__ . '/includes/functions/woocommerce-setup.php');
-
-// Dequeue unnecessary scripts
-require_once(__DIR__ . '/includes/functions/dequeue-scripts.php');
-
-// Schema options
-require_once(__DIR__ . '/includes/functions/schema.php');
-
-// Jobs CPT
-require_once(__DIR__ . '/includes/functions/vacancies-cpt.php');
-require_once(__DIR__ . '/includes/functions/sectors-cpt.php');
-
-// Dequeue CF7 scripts
-// require_once( __DIR__ . '/includes/functions/dequeue-cf7-scripts.php');
-
-// // Remove <p> and <br /> from Contact Form 7
-// require_once( __DIR__ . '/includes/functions/remove-cf7-tags.php');
-
-// Remove uneccessary Wordpress header scripts and code
-require_once(__DIR__ . '/includes/functions/remove-wp-includes.php');
-
-
+}
+add_action('wp_enqueue_scripts', 'shapeSpace_include_custom_jquery');
 
 remove_action('shutdown', 'wp_ob_end_flush_all', 1);
 
@@ -70,6 +99,7 @@ function app_scripts() {
       'template_directory_uri' => get_stylesheet_directory_uri(), // child theme directory path.
       'rest_url' => untrailingslashit( esc_url_raw( rest_url() ) ), // URL to the REST endpoint.
       'app_path' => $post->post_name, // page where the custom page template is loaded.
+      'nonce' => wp_create_nonce( 'wp_rest' ),
       'post_categories' => get_terms( array(
         'taxonomy' => 'category', // default post categories.
         'hide_empty' => true,
@@ -80,116 +110,5 @@ function app_scripts() {
 		wp_enqueue_script( 'vue_app' );	
 }
 
-
-//custom image type
-class ACFImage
-{
-  public $src;
-  public $srcset;
-  public $srcset_sizes;
-  public $alt_text;
-  public $meta;
-  public $title;
-  public $caption;
-
-  // setters
-
-  function set_src($src)
-  {
-    $this->src = $src;
-  }
-
-  function set_srcset($srcset)
-  {
-    $this->srcset = $srcset;
-  }
-
-  function set_srcset_sizes($srcset_sizes)
-  {
-    $this->srcset_sizes = $srcset_sizes;
-  }
-
-  function set_alt_text($alt_text)
-  {
-    $this->alt_text = $alt_text;
-  }
-
-  function set_meta($meta)
-  {
-    $this->meta = $meta;
-  }
-
-  function set_title($title)
-  {
-    $this->title = $title;
-  }
-
-  function set_caption($caption)
-  {
-    $this->caption = $caption;
-  }
-
-  //getters
-
-  function get_src()
-  {
-    return $this->src;
-  }
-
-  function get_srcset()
-  {
-    return $this->srcset;
-  }
-
-  function get_srcset_sizes()
-  {
-    return $this->srcset_sizes;
-  }
-
-  function get_alt_text()
-  {
-    return $this->alt_text;
-  }
-
-  function get_meta()
-  {
-    return $this->meta;
-  }
-
-  function get_title()
-  {
-    return $this->title;
-  }
-
-  function get_caption()
-  {
-    return $this->caption;
-  }
-
-}
-
-function GetACFImage($img)
-{
-
-  if ($img) {
-
-    $output = new ACFImage;
-
-    $output->set_src(wp_get_attachment_image_src($img, null));
-    $output->set_srcset(wp_get_attachment_image_srcset($img, null));
-    $output->set_srcset_sizes(wp_get_attachment_image_sizes($img, null));
-    $output->set_alt_text(get_post_meta($img, '_wp_attachment_image_alt', true));
-    $output->set_meta(wp_get_attachment_metadata($img));
-    $output->set_title(get_the_title($img));
-    $output->set_caption(get_the_excerpt($img));
-
-    return $output;
-
-  } else {
-
-    return null;
-  }
-
-}
 
 ?>

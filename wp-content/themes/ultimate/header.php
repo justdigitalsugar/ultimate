@@ -35,16 +35,6 @@
     <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/dist/img/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     <link rel='stylesheet' href='<?php echo get_template_directory_uri(); ?>/dist/css/main.css'>
-    <!-- <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/fonts/Moderat-Light.woff2" as="font"
-        crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/fonts/Moderat-Medium.woff2" as="font"
-        crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/fonts/Audrey-Bold.woff2" as="font"
-        crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/fonts/Audrey-Medium.woff2" as="font"
-        crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/dist/fonts/Audrey-Normal.woff2" as="font"
-        crossorigin="anonymous"> -->
 
     <?php if(get_sub_field('tracking', 'option')) :?>
     <?php the_field( 'tracking', 'option' ); ?>
@@ -57,15 +47,3 @@
     <?php if(get_sub_field('body_scripts', 'option')) :?>
     <?php the_field( 'body_scripts', 'option' ); ?>
     <?php endif;?>
-    <section class="fixed top-0 left-0 w-full z-[999] my-4 lg:my-4">
-        <div class="bg-gray-100 w-[95%] mx-auto rounded-full">
-            <?php get_template_part( 'template-parts/navigation/top-bar' ) ?>
-        <!-- ?php get_template_part( 'template-parts/navigation/logo-strip' ) ?-->
-        <?php get_template_part( 'template-parts/navigation/menu' ) ?>
-    </div>
-    <div class="container">
-        <?php get_template_part( 'template-parts/navigation/bottom-bar' ) ?>
-    </div>
-        
-    </section>
-    <!--/header -->
